@@ -3,73 +3,75 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#12151b">
 
-  <title>OZMA: Asphalt Rebels</title>
+  <title>OZMA: Asphalt Rebels — Inicio</title>
 
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/menu-arcade.css">
-
 </head>
 
 <body>
   <div class="game-container">
 
     <header class="game-header">
-      <p class="studio">OZMA GAME STUDIO</p>
-      <h1>ASPHALT <span>REBELS</span></h1>
-      <p class="subtitle">BIKER DELIVERY ARCADE</p>
+      <p class="studio">OZMA GAMING</p>
+
+      <h1>
+        ASPHALT <span>REBELS</span>
+      </h1>
+
+      <p class="subtitle">
+        BIKER DELIVERY ARCADE
+      </p>
     </header>
 
     <main>
 
-      <section class="city-preview">
+      <!-- ESCENARIO RETRO PROVISIONAL -->
+
+      <section class="city-preview"
+               aria-label="Vista previa de Distrito Cero">
+
         <div class="street">
-          <span class="delivery-point">A → B</span>
-          <span class="motorcycle">🏍️</span>
+
+          <span class="delivery-point">
+            A → B
+          </span>
+
+          <span class="motorcycle"
+                aria-label="Motocicleta">🏍️</span>
+
         </div>
+
         <p>DISTRITO CERO</p>
+
       </section>
 
-      <nav class="main-menu" aria-label="Menú principal">
-        <button type="button" disabled>
-          JUGAR — PRÓXIMAMENTE
+      <!-- COMIENZO DE LA SECUENCIA DE JUEGO -->
+
+      <form class="main-menu"
+            action="riders.html"
+            method="get">
+
+        <button type="submit">
+          ▶ JUGAR
         </button>
-      </nav>
 
-      <section class="riders">
-        <h2>SELECCIÓN DE RIDER</h2>
-
-        <div class="rider-grid">
-          <article class="rider-card">
-            <h3>LINA</h3>
-            <p>AGILIDAD</p>
-          </article>
-
-          <article class="rider-card">
-            <h3>NYX</h3>
-            <p>VELOCIDAD</p>
-          </article>
-
-          <article class="rider-card">
-            <h3>TORO</h3>
-            <p>RESISTENCIA</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="districts">
-        <h2>PROGRESO DE DISTRITOS</h2>
-        <p>DISTRITO CERO — ZONA INICIAL</p>
-        <p>Más distritos próximamente</p>
-      </section>
+      </form>
 
     </main>
 
-    <footer>
-      <p>MVP 0.1 — DEMOSTRACIÓN VISUAL</p>
-      <p>OZMA GAME STUDIO © 2026</p>
+    <footer class="game-footer">
+      <p>OZMA GAMING © 2026</p>
+
+      <p>
+        MVP 0.1 — DEMOSTRACIÓN VISUAL
+      </p>
     </footer>
 
   </div>

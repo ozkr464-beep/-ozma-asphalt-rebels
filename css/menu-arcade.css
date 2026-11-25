@@ -1,18 +1,15 @@
-
-/* OZMA ASPHALT REBELS
-   SPRINT 01.1 — IDENTIDAD ARCADE
-   Diseño experimental Mobile First
-*/
-
 :root {
   --arcade-black: #090d14;
   --arcade-panel: #1a2231;
+  --arcade-panel-2: #232d3f;
   --arcade-green: #b7f000;
+  --arcade-green-soft: #d7ff73;
   --arcade-shadow: #465d00;
   --arcade-white: #f5f5f5;
+  --arcade-text: #d8dfeb;
+  --arcade-muted: #97a3b8;
+  --arcade-line: #2b3950;
 }
-
-/* Fondo principal retro */
 
 body {
   background: #05070b;
@@ -23,7 +20,6 @@ body {
   isolation: isolate;
   border-left: 3px solid #263346;
   border-right: 3px solid #263346;
-
   background:
     repeating-linear-gradient(
       0deg,
@@ -33,17 +29,13 @@ body {
     var(--arcade-black);
 }
 
-/* Efecto de cuadrícula */
-
 .game-container::before {
   content: "";
   position: absolute;
   inset: 0;
-
   background-image:
     linear-gradient(#b7f00009 1px, transparent 1px),
     linear-gradient(90deg, #b7f00009 1px, transparent 1px);
-
   background-size: 8px 8px;
   pointer-events: none;
   z-index: 0;
@@ -53,8 +45,6 @@ body {
   position: relative;
   z-index: 1;
 }
-
-/* Título de videojuego */
 
 .game-header h1 {
   font-family: "Courier New", monospace;
@@ -72,65 +62,191 @@ body {
   font-weight: bold;
 }
 
-/* Escenario visual */
+.subtitle,
+.game-footer p {
+  font-family: monospace;
+}
 
 .city-preview {
   border-radius: 0;
   border: 3px solid var(--arcade-green);
-
   box-shadow:
     5px 5px 0 var(--arcade-shadow),
     0 0 20px #b7f00020;
 }
 
-/* Botón principal */
-
 .main-menu button {
   border-radius: 0;
   border: 3px solid #d7ff73;
-
   font-family: monospace;
   font-weight: 900;
   letter-spacing: 1px;
-
   box-shadow: 5px 5px 0 var(--arcade-shadow);
 }
 
-/* Tarjetas de personajes */
+.riders-section,
+.districts-section {
+  margin-top: 1.25rem;
+}
+
+h2 {
+  font-family: monospace;
+  text-shadow: 2px 2px 0 #000000;
+  text-align: center;
+  color: var(--arcade-green);
+  margin-bottom: 1rem;
+}
+
+.riders-grid {
+  display: grid;
+  gap: 1rem;
+}
 
 .rider-card {
   border-radius: 0;
   border: 2px solid var(--arcade-green);
-
   background: var(--arcade-panel);
   box-shadow: 3px 3px 0 #000000;
+  overflow: hidden;
+}
+
+.rider-portrait {
+  min-height: 110px;
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--arcade-green);
+  position: relative;
+}
+
+.rider-portrait::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border: 2px dashed #ffffff22;
+  pointer-events: none;
+}
+
+.rider-portrait--lina {
+  background:
+    linear-gradient(180deg, #0f1726 0%, #203552 100%);
+}
+
+.rider-portrait--nyx {
+  background:
+    linear-gradient(180deg, #130f23 0%, #32204d 100%);
+}
+
+.rider-portrait--toro {
+  background:
+    linear-gradient(180deg, #1e1212 0%, #4a2323 100%);
+}
+
+.portrait-label {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border: 2px solid var(--arcade-green-soft);
+  background: #00000088;
+  color: var(--arcade-green-soft);
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.rider-info {
+  padding: 0.9rem;
 }
 
 .rider-card h3 {
   font-family: monospace;
   color: var(--arcade-white);
+  margin-bottom: 0.2rem;
 }
 
-/* Distritos */
-
-.districts {
-  border-radius: 0;
-  border: 2px solid #465d00;
-
-  box-shadow: 4px 4px 0 #000000;
-}
-
-/* Encabezados retro */
-
-h2 {
+.rider-role {
   font-family: monospace;
-  text-shadow: 2px 2px 0 #000000;
+  color: var(--arcade-green);
+  font-size: 0.78rem;
+  font-weight: bold;
+  margin-bottom: 0.9rem;
 }
 
-/* Ajuste en pantallas pequeñas */
+.stat {
+  display: grid;
+  gap: 0.25rem;
+  margin-bottom: 0.55rem;
+}
+
+.stat span {
+  font-family: monospace;
+  font-size: 0.78rem;
+  color: var(--arcade-text);
+}
+
+.stat-bar {
+  height: 10px;
+  border: 1px solid var(--arcade-line);
+  background: #0d121a;
+  overflow: hidden;
+}
+
+.fill {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #8bbd00, #d7ff73);
+}
+
+.fill--2 { width: 40%; }
+.fill--3 { width: 60%; }
+.fill--4 { width: 80%; }
+.fill--5 { width: 100%; }
+
+.districts-grid {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.district-card {
+  border: 2px solid #465d00;
+  background: var(--arcade-panel-2);
+  box-shadow: 4px 4px 0 #000000;
+  padding: 0.9rem;
+}
+
+.district-card h3 {
+  font-family: monospace;
+  color: var(--arcade-white);
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+.district-card p {
+  font-family: monospace;
+  color: var(--arcade-muted);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.district-card--active {
+  border-color: var(--arcade-green);
+  box-shadow:
+    4px 4px 0 #000000,
+    0 0 14px #b7f00022;
+}
+
+.game-footer {
+  text-align: center;
+  margin-top: 1.2rem;
+}
 
 @media (max-width: 360px) {
   .game-header h1 {
     letter-spacing: -1px;
+  }
+
+  .portrait-label {
+    font-size: 0.75rem;
   }
 }
