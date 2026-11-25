@@ -1,0 +1,171 @@
+
+:root {
+  --background: #12151b;
+  --surface: #252a33;
+  --primary: #b7f000;
+  --accent: #f04b22;
+  --text: #ffffff;
+  --muted: #adb5bd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #090b0f;
+  color: var(--text);
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 20px 16px;
+  background: var(--background);
+}
+
+.game-header {
+  text-align: center;
+  padding: 24px 0;
+}
+
+.studio {
+  color: var(--primary);
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(28px, 8vw, 42px);
+}
+
+h1 span {
+  color: var(--primary);
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.city-preview {
+  padding: 12px;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  text-align: center;
+}
+
+.street {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  overflow: hidden;
+  background: repeating-linear-gradient(
+    90deg,
+    #343943 0,
+    #343943 47%,
+    #d4b054 48%,
+    #d4b054 49%,
+    #343943 50%
+  );
+}
+
+.motorcycle {
+  font-size: 56px;
+}
+
+.delivery-point {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 6px;
+  background: var(--primary);
+  color: #111111;
+  font-weight: bold;
+}
+
+.main-menu {
+  margin: 20px 0;
+}
+
+.main-menu button {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: var(--primary);
+  color: #111111;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.main-menu button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+h2 {
+  font-size: 15px;
+  color: var(--primary);
+  text-align: center;
+}
+
+.rider-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.rider-card {
+  min-width: 0;
+  padding: 12px 4px;
+  background: var(--surface);
+  border: 1px solid var(--primary);
+  border-radius: 8px;
+  text-align: center;
+}
+
+.rider-card h3 {
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+.rider-card p {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.districts {
+  margin-top: 20px;
+  padding: 15px;
+  background: var(--surface);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 12px;
+}
+
+footer {
+  margin-top: 24px;
+  color: var(--muted);
+  text-align: center;
+  font-size: 10px;
+}
+
+@media (max-width: 360px) {
+  .game-container {
+    padding: 14px 10px;
+  }
+
+  .rider-card h3 {
+    font-size: 13px;
+  }
+}
