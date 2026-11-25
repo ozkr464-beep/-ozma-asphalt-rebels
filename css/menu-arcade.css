@@ -1,0 +1,136 @@
+
+/* OZMA ASPHALT REBELS
+   SPRINT 01.1 — IDENTIDAD ARCADE
+   Diseño experimental Mobile First
+*/
+
+:root {
+  --arcade-black: #090d14;
+  --arcade-panel: #1a2231;
+  --arcade-green: #b7f000;
+  --arcade-shadow: #465d00;
+  --arcade-white: #f5f5f5;
+}
+
+/* Fondo principal retro */
+
+body {
+  background: #05070b;
+}
+
+.game-container {
+  position: relative;
+  isolation: isolate;
+  border-left: 3px solid #263346;
+  border-right: 3px solid #263346;
+
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 7px,
+      #ffffff05 7px 8px
+    ),
+    var(--arcade-black);
+}
+
+/* Efecto de cuadrícula */
+
+.game-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(#b7f00009 1px, transparent 1px),
+    linear-gradient(90deg, #b7f00009 1px, transparent 1px);
+
+  background-size: 8px 8px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.game-container > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Título de videojuego */
+
+.game-header h1 {
+  font-family: "Courier New", monospace;
+  font-weight: 900;
+  letter-spacing: -2px;
+  text-shadow: 4px 4px 0 #000000;
+}
+
+.game-header h1 span {
+  color: var(--arcade-green);
+}
+
+.studio {
+  font-family: monospace;
+  font-weight: bold;
+}
+
+/* Escenario visual */
+
+.city-preview {
+  border-radius: 0;
+  border: 3px solid var(--arcade-green);
+
+  box-shadow:
+    5px 5px 0 var(--arcade-shadow),
+    0 0 20px #b7f00020;
+}
+
+/* Botón principal */
+
+.main-menu button {
+  border-radius: 0;
+  border: 3px solid #d7ff73;
+
+  font-family: monospace;
+  font-weight: 900;
+  letter-spacing: 1px;
+
+  box-shadow: 5px 5px 0 var(--arcade-shadow);
+}
+
+/* Tarjetas de personajes */
+
+.rider-card {
+  border-radius: 0;
+  border: 2px solid var(--arcade-green);
+
+  background: var(--arcade-panel);
+  box-shadow: 3px 3px 0 #000000;
+}
+
+.rider-card h3 {
+  font-family: monospace;
+  color: var(--arcade-white);
+}
+
+/* Distritos */
+
+.districts {
+  border-radius: 0;
+  border: 2px solid #465d00;
+
+  box-shadow: 4px 4px 0 #000000;
+}
+
+/* Encabezados retro */
+
+h2 {
+  font-family: monospace;
+  text-shadow: 2px 2px 0 #000000;
+}
+
+/* Ajuste en pantallas pequeñas */
+
+@media (max-width: 360px) {
+  .game-header h1 {
+    letter-spacing: -1px;
+  }
+}
