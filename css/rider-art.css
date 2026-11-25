@@ -1,0 +1,75 @@
+
+/*
+  OZMA: ASPHALT REBELS
+  CHARACTER ART V1
+  SPRINT 01.5
+*/
+
+.rider-art {
+  display: block;
+
+  width: clamp(72px, 24vw, 96px);
+  height: auto;
+  aspect-ratio: 1 / 1;
+
+  flex-shrink: 0;
+
+  object-fit: cover;
+  object-position: center;
+
+  image-rendering: pixelated;
+
+  background: #101820;
+
+  border: 3px solid var(--green);
+
+  box-shadow: 4px 4px 0 #000000;
+}
+
+/* Destacar el retrato seleccionado */
+
+.rider-radio:checked
+  + .selection-card
+  .rider-art {
+  border-color: #ffffff;
+
+  box-shadow:
+    4px 4px 0 #000000,
+    0 0 16px #b7f00088;
+}
+
+/* Mejorar lectura */
+
+.rider-copy strong {
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+
+.rider-copy small {
+  font-size: 11px;
+  line-height: 1.4;
+}
+
+/* Adaptación a móviles compactos */
+
+@media (max-width: 360px) {
+  .rider-art {
+    width: 72px;
+  }
+
+  .rider-copy strong {
+    font-size: 14px;
+  }
+
+  .rider-copy small {
+    font-size: 10px;
+  }
+}
+
+/* Pantallas con poca altura */
+
+@media (max-height: 650px) {
+  .rider-art {
+    width: 56px;
+  }
+}

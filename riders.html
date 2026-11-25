@@ -5,11 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+
   <meta name="theme-color" content="#090d14">
 
   <title>Seleccionar Rider — Asphalt Rebels</title>
 
   <link rel="stylesheet" href="css/navigation.css">
+  <link rel="stylesheet" href="css/rider-art.css">
 </head>
 
 <body>
@@ -24,11 +26,9 @@
       <p>ASPHALT REBELS</p>
     </header>
 
-    <form
-      class="rider-form"
-      action="districts.html"
-      method="get"
-    >
+    <form class="rider-form"
+          action="districts.html"
+          method="get">
 
       <fieldset class="selection-list">
         <legend class="visually-hidden">
@@ -49,12 +49,17 @@
           <label class="selection-card lina"
                  for="rider-lina">
 
-            <span class="portrait-placeholder"
-                  aria-hidden="true">L</span>
+            <img
+              class="rider-art"
+              src="assets/images/riders/lina-portrait.png"
+              alt="Retrato pixel art de Lina"
+              width="96"
+              height="96"
+            >
 
             <span class="rider-copy">
               <strong>LINA</strong>
-              <small>ESPECIALIDAD: AGILIDAD</small>
+              <small>AGILIDAD</small>
             </span>
 
             <span class="selection-indicator"
@@ -76,12 +81,17 @@
           <label class="selection-card nyx"
                  for="rider-nyx">
 
-            <span class="portrait-placeholder"
-                  aria-hidden="true">N</span>
+            <img
+              class="rider-art"
+              src="assets/images/riders/nyx-portrait.png"
+              alt="Retrato pixel art de Nyx"
+              width="96"
+              height="96"
+            >
 
             <span class="rider-copy">
               <strong>NYX</strong>
-              <small>ESPECIALIDAD: VELOCIDAD</small>
+              <small>VELOCIDAD</small>
             </span>
 
             <span class="selection-indicator"
@@ -103,12 +113,17 @@
           <label class="selection-card toro"
                  for="rider-toro">
 
-            <span class="portrait-placeholder"
-                  aria-hidden="true">T</span>
+            <img
+              class="rider-art"
+              src="assets/images/riders/toro-portrait.png"
+              alt="Retrato pixel art de Toro"
+              width="96"
+              height="96"
+            >
 
             <span class="rider-copy">
               <strong>TORO</strong>
-              <small>ESPECIALIDAD: RESISTENCIA</small>
+              <small>RESISTENCIA</small>
             </span>
 
             <span class="selection-indicator"
@@ -119,12 +134,14 @@
       </fieldset>
 
       <footer class="screen-footer">
+
         <p>ELIGE UN RIDER PARA CONTINUAR</p>
 
         <button class="action-button"
                 type="submit">
           CONTINUAR →
         </button>
+
       </footer>
 
     </form>
