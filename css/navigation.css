@@ -67,38 +67,88 @@ h1 {
   margin: 0;
 }
 
-.selection-list {
+.rider-form {
   display: flex;
   flex: 1;
   min-height: 0;
   flex-direction: column;
+  gap: 16px;
+}
+
+.selection-list {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  flex-direction: column;
   gap: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Selección de personajes */
+
+.rider-choice {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 65px;
+}
+
+.rider-radio {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
 }
 
 .selection-card,
 .district-option {
   flex: 1;
+  min-width: 0;
   min-height: 65px;
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 12px;
   background: var(--panel);
-  border: 2px solid var(--green);
+  border: 2px solid #617087;
   box-shadow: 3px 3px 0 #000;
 }
 
-.selection-card h2,
-.district-option h2 {
-  margin: 0 0 7px;
-  font-size: 15px;
+.selection-card {
+  cursor: pointer;
+  transition:
+    border-color 0.15s,
+    box-shadow 0.15s,
+    filter 0.15s;
 }
 
-.selection-card p,
-.district-option p {
-  margin: 0;
-  font-size: 10px;
-  color: var(--muted);
+.selection-card:hover {
+  border-color: var(--green);
+}
+
+.rider-radio:checked + .selection-card {
+  border-color: var(--green);
+  box-shadow:
+    3px 3px 0 #000,
+    0 0 16px #b7f00066;
+  filter: brightness(1.13);
+}
+
+.rider-radio:focus-visible + .selection-card {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
 }
 
 .portrait-placeholder {
@@ -114,6 +164,49 @@ h1 {
   border: 2px solid var(--green);
 }
 
+.rider-copy {
+  display: flex;
+  flex: 1;
+  min-width: 0;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.rider-copy strong {
+  font-size: 15px;
+}
+
+.rider-copy small {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.selection-indicator {
+  width: 23px;
+  height: 23px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border: 2px solid #8290a4;
+  border-radius: 50%;
+}
+
+.rider-radio:checked
+  + .selection-card
+  .selection-indicator {
+  background: var(--green);
+  border-color: var(--green);
+  color: #111;
+}
+
+.rider-radio:checked
+  + .selection-card
+  .selection-indicator::after {
+  content: "✓";
+  font-size: 16px;
+  font-weight: bold;
+}
+
 .lina {
   background: #1a3044;
 }
@@ -126,8 +219,22 @@ h1 {
   background: #392321;
 }
 
+/* Distritos */
+
 .district-option {
   justify-content: space-between;
+  border-color: var(--green);
+}
+
+.district-option h2 {
+  margin: 0 0 7px;
+  font-size: 15px;
+}
+
+.district-option p {
+  margin: 0;
+  font-size: 10px;
+  color: var(--muted);
 }
 
 .district-option span {
@@ -139,6 +246,8 @@ h1 {
   opacity: 0.55;
   border-color: #465466;
 }
+
+/* Navegación inferior */
 
 .screen-footer {
   text-align: center;
@@ -171,8 +280,12 @@ h1 {
 }
 
 @media (max-height: 650px) {
-  .screen {
+  .screen,
+  .rider-form {
     gap: 8px;
+  }
+
+  .screen {
     padding: 12px;
   }
 
@@ -185,5 +298,11 @@ h1 {
   .portrait-placeholder {
     width: 44px;
     height: 44px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .selection-card {
+    transition: none;
   }
 }

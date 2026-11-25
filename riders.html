@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090d14">
 
   <title>Seleccionar Rider — Asphalt Rebels</title>
 
@@ -23,48 +24,110 @@
       <p>ASPHALT REBELS</p>
     </header>
 
-    <section class="selection-list"
-             aria-label="Personajes disponibles">
+    <form
+      class="rider-form"
+      action="districts.html"
+      method="get"
+    >
 
-      <article class="selection-card lina">
-        <div class="portrait-placeholder"
-             aria-hidden="true">L</div>
+      <fieldset class="selection-list">
+        <legend class="visually-hidden">
+          Selecciona un personaje
+        </legend>
 
-        <div>
-          <h2>LINA</h2>
-          <p>ESPECIALIDAD: AGILIDAD</p>
+        <!-- LINA -->
+        <div class="rider-choice">
+          <input
+            class="rider-radio"
+            type="radio"
+            name="rider"
+            id="rider-lina"
+            value="lina"
+            required
+          >
+
+          <label class="selection-card lina"
+                 for="rider-lina">
+
+            <span class="portrait-placeholder"
+                  aria-hidden="true">L</span>
+
+            <span class="rider-copy">
+              <strong>LINA</strong>
+              <small>ESPECIALIDAD: AGILIDAD</small>
+            </span>
+
+            <span class="selection-indicator"
+                  aria-hidden="true"></span>
+          </label>
         </div>
-      </article>
 
-      <article class="selection-card nyx">
-        <div class="portrait-placeholder"
-             aria-hidden="true">N</div>
+        <!-- NYX -->
+        <div class="rider-choice">
+          <input
+            class="rider-radio"
+            type="radio"
+            name="rider"
+            id="rider-nyx"
+            value="nyx"
+            required
+          >
 
-        <div>
-          <h2>NYX</h2>
-          <p>ESPECIALIDAD: VELOCIDAD</p>
+          <label class="selection-card nyx"
+                 for="rider-nyx">
+
+            <span class="portrait-placeholder"
+                  aria-hidden="true">N</span>
+
+            <span class="rider-copy">
+              <strong>NYX</strong>
+              <small>ESPECIALIDAD: VELOCIDAD</small>
+            </span>
+
+            <span class="selection-indicator"
+                  aria-hidden="true"></span>
+          </label>
         </div>
-      </article>
 
-      <article class="selection-card toro">
-        <div class="portrait-placeholder"
-             aria-hidden="true">T</div>
+        <!-- TORO -->
+        <div class="rider-choice">
+          <input
+            class="rider-radio"
+            type="radio"
+            name="rider"
+            id="rider-toro"
+            value="toro"
+            required
+          >
 
-        <div>
-          <h2>TORO</h2>
-          <p>ESPECIALIDAD: RESISTENCIA</p>
+          <label class="selection-card toro"
+                 for="rider-toro">
+
+            <span class="portrait-placeholder"
+                  aria-hidden="true">T</span>
+
+            <span class="rider-copy">
+              <strong>TORO</strong>
+              <small>ESPECIALIDAD: RESISTENCIA</small>
+            </span>
+
+            <span class="selection-indicator"
+                  aria-hidden="true"></span>
+          </label>
         </div>
-      </article>
 
-    </section>
+      </fieldset>
 
-    <footer class="screen-footer">
-      <p>SELECCIÓN VISUAL — AÚN NO SE GUARDA EL RIDER</p>
+      <footer class="screen-footer">
+        <p>ELIGE UN RIDER PARA CONTINUAR</p>
 
-      <a href="districts.html" class="action-button">
-        CONTINUAR →
-      </a>
-    </footer>
+        <button class="action-button"
+                type="submit">
+          CONTINUAR →
+        </button>
+      </footer>
+
+    </form>
 
   </main>
 </body>
