@@ -1,0 +1,43 @@
+/* OZMA: Asphalt Rebels — Sprint 01.7 / escenario estático */
+:root {
+  --black: #090d14;
+  --panel: #17212d;
+  --green: #b7f000;
+  --white: #f5f6f0;
+  --muted: #9eabb9;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { background: #05080c; color: var(--white); font-family: "Courier New", monospace; }
+.demo-screen {
+  width: 100%; max-width: 480px; min-height: 100dvh;
+  margin: 0 auto; padding: 14px 12px 20px;
+  display: flex; flex-direction: column; align-items: center; gap: 12px;
+  background: var(--black);
+}
+.demo-header { width: 100%; text-align: center; }
+.back-link { display: block; text-align: left; color: var(--green); font-size: 12px; text-decoration: none; font-weight: bold; }
+.back-link:focus-visible { outline: 2px solid white; outline-offset: 4px; }
+.eyebrow { color: var(--muted); font-size: 10px; letter-spacing: 1px; margin: 16px 0 4px; }
+h1 { font-size: clamp(22px, 6vw, 30px); color: var(--green); margin: 2px 0; }
+.subtitle { font-size: 10px; color: var(--muted); margin: 5px 0 0; }
+.stage {
+  position: relative; width: min(100%, 320px); aspect-ratio: 5 / 6;
+  border: 3px solid var(--green); box-shadow: 5px 5px 0 #3e5500;
+  overflow: hidden; background: #303943;
+}
+.map-image { width: 100%; height: 100%; display: block; image-rendering: pixelated; }
+.point {
+  position: absolute; display: grid; place-items: center;
+  width: 22px; height: 22px; border: 2px solid #101920;
+  background: var(--green); color: #111; font-size: 13px; font-weight: bold;
+  box-shadow: 2px 2px #101920;
+}
+.point-a { left: 78%; top: 26%; }
+.point-b { left: 13%; top: 72%; }
+.bike { position: absolute; width: 20px; height: 30px; top: 73%; left: 45%; image-rendering: pixelated; filter: drop-shadow(2px 3px #0e171b); }
+.map-legend { width: min(100%, 320px); background: var(--panel); border: 2px solid #3f5664; padding: 12px; }
+.map-legend p { margin: 3px 0 8px; font-size: 12px; }
+.map-legend strong { color: var(--green); }
+.map-legend .note { color: var(--muted); font-size: 10px; margin-top: 10px; line-height: 1.5; }
+@media (max-height: 680px) { .demo-screen { gap: 8px; padding-top: 7px; } .eyebrow { margin-top: 7px; } }
